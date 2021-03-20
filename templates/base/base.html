@@ -20,7 +20,7 @@
 
     <!-- Custom CSS -->
     <link href="{% static 'css/stylish-portfolio.min.css' %}" rel="stylesheet">
-
+    {% block style %}{% endblock %}
 </head>
 
 <body id="page-top">
@@ -35,20 +35,20 @@
             <a class="js-scroll-trigger" href="#">Start Bootstrap</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">Home</a>
+            <a class="js-scroll-trigger" href="{% url 'home' %}">Профиль</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">About</a>
+            <a class="js-scroll-trigger" href="#">О матрцие</a>
         </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">Services</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">Portfolio</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">Contact</a>
-        </li>
+        {% if user.is_authenticated %}
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{% url 'logout' %}">Выйти</a>
+            </li>
+        {% else %}
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="{% url 'login' %}">Войти</a>
+            </li>
+        {% endif %}
     </ul>
 </nav>
 {% block content %}

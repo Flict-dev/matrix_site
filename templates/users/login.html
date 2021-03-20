@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load crispy_forms_filters %}
+{% load static %}
 {% block content %}
     <main class="container">
         <div class="row">
@@ -13,8 +14,8 @@
                         {% endfor %}
                     {% endif %}
                     <div class="text-center mt-5 b-1">
-                        <h1 class="h3 mb-3 font-weight-normal">Джуманджи</h1>
-                        <p class="h5 font-weight-light">Войдите, чтобы управлять</p>
+                        <h1 class="h3 mb-3 font-weight-normal">Матрицы</h1>
+                        <p class="h5 font-weight-light">Войдите, чтобы создавать</p>
                     </div>
                     {{ form|crispy }}
                     <div class="checkbox mb-3"></div>

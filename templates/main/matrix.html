@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <section class="content-section" id="portfolio">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h2 class="mb-5">Recent Projects</h2>
+            </div>
+            <div class="row no-gutters">
+                {% for matrix in matrices %}
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <form action="{% url 'add-task' pk=matrix.pk %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6">{{ form }}</div>
+                                        <button class="col-lg-6 btn btn-warning">Добавить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {% for task in matrix.tasks.all %}
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <a href="{% url 'delete-task' pk=task.pk %}">
+                                            <button class="btn btn-info col-lg-6">✓</button>
+                                        </a>
+                                        <p class="col-lg-9">{{ task.task }}</p>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
