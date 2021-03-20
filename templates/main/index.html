@@ -1,0 +1,135 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">Stylish Portfolio</h1>
+            <h3 class="mb-5">
+                <em>A Free Bootstrap Theme by Start Bootstrap</em>
+            </h3>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#">Find Out More</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <!-- Services -->
+    <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">What We Offer</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+                    <h4>
+                        <strong>Responsive</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Looks great on any screen size!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+                    <h4>
+                        <strong>Redesigned</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+                    <h4>
+                        <strong>Favorited</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Millions of users
+                        <i class="fas fa-heart"></i>
+                        Start Bootstrap!</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-mustache"></i>
+          </span>
+                    <h4>
+                        <strong>Question</strong>
+                    </h4>
+                    <p class="text-faded mb-0">I mustache you a question...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio -->
+    <section class="content-section" id="portfolio">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h2 class="mb-5">Recent Projects</h2>
+            </div>
+            <div class="row no-gutters">
+                {% for item in matrices %}
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <label>
+                                        <input type="text" name="txt" placeholder="Задача" class="col-lg-6 border-0">
+                                    </label>
+                                    <button class="col-lg-6 btn btn-warning">Сохранить</button>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <a href="#">
+                                            <button class="btn btn-info col-lg-6">✓</button>
+                                        </a>
+                                        <p class="col-lg-9">Сделать дз</p>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <a href="#">
+                                            <button class="btn btn-info col-lg-6">✓</button>
+                                        </a>
+                                        <p class="col-lg-6">Сделать дз</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="content-section bg-white text-white">
+
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <div class="container">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#">
+                            <i class="icon-social"><img src="{% static 'img/vk.png' %}"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#">
+                            <i class="icon-social"><img src="{% static 'img/vk.png' %}"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="#!">
+                            <img src="{% static 'img/ins.png' %}">
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+            </div>
+        </footer>
+    </section>
+{% endblock %}
