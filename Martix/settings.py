@@ -98,7 +98,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_APP_DIR = 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'app/static'),
 )
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
