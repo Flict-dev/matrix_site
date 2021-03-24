@@ -3,7 +3,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '3a2x+ph#h6)j&)2_j3sl5eoqsk=ap_c1v650+(n0-6&h1=47p@'
+SECRET_KEY = ''
 
 DEBUG = True
 
@@ -36,6 +36,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'djangorescue.middleware.StaticMediaMiddleware',
 ]
 
 ROOT_URLCONF = 'Martix.urls'
@@ -93,6 +94,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_APP_DIR = 'static'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -100,3 +102,11 @@ LOGIN_REDIRECT_URL = '/matrix/'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'info@project-matrix.ru'

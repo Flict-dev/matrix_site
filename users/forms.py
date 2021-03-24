@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 
 class MyRegistrationForm(UserCreationForm):
@@ -15,3 +16,10 @@ class MyRegistrationForm(UserCreationForm):
             'password1': 'Пароль',
             'password2': 'Потверждение пароля'
         }
+
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ('email',)
+        labels = {'email': 'Почта'}

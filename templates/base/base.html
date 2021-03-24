@@ -19,45 +19,65 @@
     <link href="{% static  'vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{% static 'css/stylish-portfolio.min.css' %}" rel="stylesheet">
-    {% block style %}{% endblock %}
+    <link href="{% static 'css/styles.min.css' %}" rel="stylesheet">
+    {% block style %}
+    {% endblock %}
 </head>
 
 <body id="page-top">
-
-<!-- Navigation -->
-<a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-</a>
-<nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a class="js-scroll-trigger" href="#">Start Bootstrap</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="{% url 'home' %}">Профиль</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">О матрцие</a>
-        </li>
-        {% if user.is_authenticated %}
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{% url 'logout' %}">Выйти</a>
-            </li>
-        {% else %}
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="{% url 'login' %}">Войти</a>
-            </li>
-        {% endif %}
-    </ul>
-</nav>
+<section class="bg-info">
+    <main class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="{% url 'home' %}">Матрица</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Выйти</a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Войти</a>
+                    {% endif %}
+                    <a class="nav-item nav-link" href="{% url 'about' %}">О проекте</a>
+                </div>
+            </div>
+        </nav>
+    </main>
+</section>
 {% block content %}
 {% endblock %}
-<!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
-
+<section class=" bg-white text-dark">
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <h2 class="mb-5">Контакты</h2>
+            <ul class="list-inline mb-4">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#">
+                        <i class="icon-social"><img src="{% static 'img/vk.png' %}" alt="img"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#">
+                        <i class="icon-social"><img src="{% static 'img/telegram.png' %}" alt="img"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#!">
+                        <img src="{% static 'img/inst.png' %}" alt="img">
+                    </a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0" style="font-size: 1em;">This site is developed by <span><a href="https://vk.com/fl1ct" target="_blank">Flict</a></span></p>
+        </div>
+    </footer>
+</section>
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -66,7 +86,7 @@
 <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{% static 'js/stylish-portfolio.min.js' %}"></script>
+<script src="{% static 'js/code.min.js' %}"></script>
 
 </body>
 

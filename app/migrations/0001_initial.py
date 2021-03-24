@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -19,7 +18,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('task', models.CharField(max_length=300, verbose_name='Задача')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Пользоваетль')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL,
+                                           verbose_name='Пользоваетль')),
             ],
             options={
                 'verbose_name': 'Задача',
@@ -33,7 +33,9 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=50, verbose_name='Наименование')),
                 ('anon', models.BooleanField(default=True, verbose_name='Анон')),
                 ('tasks', models.ManyToManyField(to='app.Tasks', verbose_name='Задачи')),
-                ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Пользоваетль')),
+                ('user',
+                 models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL,
+                                   verbose_name='Пользоваетль')),
             ],
             options={
                 'verbose_name': 'Матрица',

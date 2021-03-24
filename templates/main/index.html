@@ -1,10 +1,21 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% block style %}
+    <style>
+        body {
+            background-color: #17a2b8;
+        }
+    </style>
+{% endblock %}
 {% block content %}
     <!-- Header -->
     <header class="masthead d-flex">
         <div class="container text-center my-auto">
-            <h1 class="mb-1">Матрица Эйзенхауэра</h1>
+            <h1 class="mb-1 main-h1">
+                <div class="type-js headline">
+                    <h1 class="text-js">Матрица Эйзенхауэра</h1>
+                </div>
+            </h1>
             <h3 class="mb-5">
                 <em>Научись распределять своё время</em>
             </h3>
@@ -16,8 +27,8 @@
     <section class="content-section bg-primary text-white text-center" id="services">
         <div class="container">
             <div class="content-section-heading">
-                <h3 class="text-secondary mb-0">Services</h3>
-                <h2 class="mb-5">What We Offer</h2>
+                <h3 class="text-secondary mb-0">Функционал</h3>
+                <h2 class="mb-5">Что мы предлагаем</h2>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
@@ -25,69 +36,38 @@
             <i class="icon-screen-smartphone"></i>
           </span>
                     <h4>
-                        <strong>Responsive</strong>
+                        <strong>Удобство</strong>
                     </h4>
-                    <p class="text-faded mb-0">Looks great on any screen size!</p>
+                    <p class="text-faded mb-0">Доступно на разных устройствах</p>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="icon-pencil"></i>
           </span>
                     <h4>
-                        <strong>Redesigned</strong>
+                        <strong>Сохранение</strong>
                     </h4>
-                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+                    <p class="text-faded mb-0">Моментальная отправка на почту</p>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="icon-like"></i>
           </span>
                     <h4>
-                        <strong>Favorited</strong>
+                        <strong>Результативность</strong>
                     </h4>
-                    <p class="text-faded mb-0">Millions of users
-                        <i class="fas fa-heart"></i>
-                        Start Bootstrap!</p>
+                    <p class="text-faded mb-0">Лучшая методика <br> тайм-менеджмента</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
           <span class="service-icon rounded-circle mx-auto mb-3">
             <i class="icon-mustache"></i>
           </span>
                     <h4>
-                        <strong>Question</strong>
+                        <strong>Индивидуальность</strong>
                     </h4>
-                    <p class="text-faded mb-0">I mustache you a question...</p>
+                    <p class="text-faded mb-0">Задачи хранятся в вашем аккаунте</p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Portfolio -->
-
-    <!-- Call to Action -->
-    <section class="content-section bg-white text-white">
-
-        <!-- Footer -->
-        <footer class="footer text-center">
-            <div class="container">
-                <ul class="list-inline mb-5">
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#">
-                            <i class="icon-social"><img src="{% static 'img/vk.png' %}"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#">
-                            <i class="icon-social"><img src="{% static 'img/vk.png' %}"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="#!">
-                            <img src="{% static 'img/ins.png' %}">
-                        </a>
-                    </li>
-                </ul>
-                <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
-            </div>
-        </footer>
     </section>
 {% endblock %}
