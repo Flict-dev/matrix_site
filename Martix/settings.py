@@ -112,6 +112,6 @@ EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'info@project-matrix.ru'
