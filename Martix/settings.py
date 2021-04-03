@@ -2,12 +2,6 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-SECRET_KEY = '3a2x+ph#h6)j&)2_j3sl5eoqsk=ap_c1v650+(n0-6&h1=47p@'
-
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
@@ -112,6 +106,10 @@ EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'info@project-matrix.ru'
+
+try:
+    from .local_settings import *
+except ImportError:
+    from .prod_settings import *
